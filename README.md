@@ -9,18 +9,18 @@ liteBanner是一个轻量级的本地违禁词检测，整句过滤的Jar包
 * 1秒峰值可以过滤50w的词语
 
 ```java
-
-	// 加载默认词典
-	BannerFilter filter = BannerFilter.DEFAULT;
-	// 向过滤器增加一个词，额外造个词
-	filter.put("buffer");
+public static void main(String[]args){
+    // 加载默认词典
+    BannerFilter filter = BannerFilter.DEFAULT;
+    // 向过滤器增加一个词，额外造个词
+    filter.put("buffer");
     filter.put("打野英雄");
     filter.put("孤胆流氓");
-	
-	String sentence = "我是一个有红buffer的打野英雄，追杀孤胆流氓";
-	BannerResp resp = filter.process(sentence);
-	System.out.println(resp);
-
+    
+    String sentence = "我是一个有红buffer的打野英雄，追杀孤胆流氓";
+    BannerResp resp = filter.process(sentence);
+    System.out.println(resp);   
+}
 ```
 返回：
 
